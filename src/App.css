@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@font-face {
+  font-family: 'Trebuchet MS';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Trebuchet MS'), url(./assets/trebuc.woff)  format('woff');
   }
+
+.App {
+  background-color: #044676;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.Particles{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.NavBar{
+  position: relative;
+  z-index: 99;
+  background-color: rgba(3, 49, 82, 0.4);
+}
+
+.SignOut{
+  background-color: #03375F !important;
+  border: 1px solid white !important;
+  font-size: 15px !important;
+  font-family: 'Trebuchet MS';
+}
+
+.SignOut:hover{
+  background-color: white !important;
+  color: #033152 !important;
+}
+
+.Header{
+  position: relative;
+  z-index: 99;
+}
+
+.HeaderText{
+  font-family: 'Trebuchet MS';
+  padding-top: 10%;
+}
+
+.HeaderText h1{
+  font-size: 50px !important;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.HeaderText p{
+  color: #EEEEEE;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MainHeader{
+  height: 400px;
+  background-color: white ;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.SectionOne{
+  background-color: #24292E;
+  border-radius: 10px 10px 0 0;
+  height: 70px;
+  width: 100%;
+  color: #F0EFE9;
+}
+
+.SectionOne p{
+  font-size: 20px;
+  font-family: 'Trebuchet MS';
+}
+
+.SectionOne .Rank{
+  color: #033152;
+  margin-left: 7px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: whitesmoke;
+}
+
+.FaceRecognition{
+  height: 260px;
+  padding: 10px;
+  background-color: #EEEEEE;
+}
+
+.FaceRecognition .Image{
+  height: 240px !important;
+}
+
+.SectionTwo{
+  position: absolute;
+  bottom: 0;
+  background-color: #24292E;
+  border-radius: 0 0 10px 10px;
+  height: 70px;
+  width: 100%;
+  color: #F0EFE9;
+}
+
+.SectionTwo .UrlText{
+  font-size: 16px !important;
+  font-family: 'Trebuchet MS';
+}
+
+.SectionTwo .Detect{
+  color: white;
+  border: 1px solid white !important;
+  font-size: 16px !important;
+  font-family: 'Trebuchet MS';
+}
+
+.SectionTwo .Detect:hover{
+  background-color: white !important;
+  color: #033152 !important;
 }
