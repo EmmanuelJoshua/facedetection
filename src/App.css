@@ -58,7 +58,7 @@
 
 .MainHeader{
   height: 400px;
-  background-color: white ;
+  background-color: #EEEEEE;
   border-radius: 12px !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -86,13 +86,24 @@
 }
 
 .FaceRecognition{
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
   height: 260px;
   padding: 10px;
-  background-color: #EEEEEE;
 }
 
 .FaceRecognition .Image{
   height: 240px !important;
+}
+
+.FaceRecognition .BoundingBox {
+  position: absolute;
+  box-shadow: 0 0 0 3px #149df2 inset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .SectionTwo{
@@ -108,6 +119,7 @@
 .SectionTwo .UrlText{
   font-size: 16px !important;
   font-family: 'Trebuchet MS';
+  border-color: white !important;
 }
 
 .SectionTwo .Detect{
@@ -118,6 +130,7 @@
 }
 
 .SectionTwo .Detect:hover{
-  background-color: white !important;
+  background-color: #EEEEEE !important;
   color: #033152 !important;
 }
+

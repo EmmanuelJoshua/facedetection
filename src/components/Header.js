@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Row, Col, Button, InputGroup, FormControl } from 'react-bootstrap'
 import FaceRecognition from './FaceRecognition';
 
-const Header = () => {
+const Header = ({box, imageUrl, onButtonDetect, onURLChange}) => {
     return (
         <div className='Header'>
             <Container>
@@ -19,21 +19,22 @@ const Header = () => {
 
                     <Col md='5' className='MainHeader mt-md-5 m-3 m-md-0 p-0 text-center'>
                         <div className='SectionOne d-flex justify-content-center align-items-center pt-3'>
-                            <p>Joshua, your current rank is </p> <p className='Rank'>5</p>
+                            <p>User, your current rank is </p> <p className='Rank'>1</p>
                         </div>
 
-                        <FaceRecognition/>
+                        <FaceRecognition box={box} imageUrl={imageUrl}/>
                         
                         <div className='SectionTwo d-flex justify-content-center align-items-center pl-3 pr-3'>
                             <InputGroup>
                                 <FormControl
+                                    onChange={onURLChange}
                                     className='UrlText'
                                     placeholder='Type image url here'
                                     aria-label='Type image url here'
                                     aria-describedby='basic-addon2'
                                 />
                                 <InputGroup.Append>
-                                    <Button variant='outline-secondary' className='Detect'>
+                                    <Button variant='outline-secondary' className='Detect' onClick={onButtonDetect}>
                                         Detect
                                     </Button>
                                 </InputGroup.Append>

@@ -1,132 +1,70 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Particles from 'react-particles-js'
+import Clarifai from 'clarifai'
 import Navigation from './components/Navigation'
 import Header from './components/Header'
+import particlesParams from './assets/particlesParams.json'
 import './App.css';
 
-function App() {
+// https://cdn.vox-cdn.com/thumbor/ptMI2El-DHUl9Hmmw1QNlzfT2m0=/0x0:3049x2048/1220x813/filters:focal(1333x1562:1819x2048):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/63058104/fake_ai_faces.0.png
 
-  const particlesParams = {
-    "particles": {
-      "number": {
-        "value": 160,
-        "density": {
-          "enable": true,
-          "value_area": 800
-        }
-      },
-      "color": {
-        "value": "#ffffff"
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#000000"
-        },
-        "polygon": {
-          "nb_sides": 5
-        },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
-        }
-      },
-      "opacity": {
-        "value": 1,
-        "random": true,
-        "anim": {
-          "enable": true,
-          "speed": 1,
-          "opacity_min": 0,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 4,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 4,
-          "size_min": 0.3,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": false,
-        "distance": 150,
-        "color": "#ffffff",
-        "opacity": 0.4,
-        "width": 2
-      },
-      "move": {
-        "enable": true,
-        "speed": 1,
-        "direction": "none",
-        "random": true,
-        "straight": false,
-        "out_mode": "out",
-        "bounce": false,
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 600
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "bubble"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "repulse"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 400,
-          "line_linked": {
-            "opacity": 1
-          }
-        },
-        "bubble": {
-          "distance": 250,
-          "size": 0,
-          "duration": 2,
-          "opacity": 0,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 200,
-          "duration": 0.4
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
-        }
-      }
-    },
-    "retina_detect": true
+const app = new Clarifai.App({
+  apiKey: '8dde49518fc44db984fc82bfa68b5409'
+});
+
+class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      input: '',
+      imageUrl: '',
+      box: {}
+    }
   }
 
-  return (
-    <div className="App">
-      <Particles
-      className='Particles'
-        params={particlesParams}
-      />
-        <Navigation/>
-        <Header/>
-    </div>
-  );
+  onURLChange = (event) => {
+    this.setState({ input: event.target.value });
+  }
+
+  onButtonDetect = () => {
+    this.setState({ imageUrl: this.state.input });
+    app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input).then(
+      response => this.displayFaceBox(this.calculateFaceLocation(response))
+        .catch(err => console.log(err))
+    );
+  }
+
+  calculateFaceLocation = (data) => {
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+    const image = document.getElementById('InputImage');
+    const width = Number(image.width);
+    const height = Number(image.height);
+    return {
+      leftCol: clarifaiFace.left_col * width,
+      topRow: clarifaiFace.top_row * height,
+      rightCol: width - (clarifaiFace.right_col * width),
+      bottomRow: height - (clarifaiFace.bottom_row * height)
+    }
+  }
+
+  displayFaceBox = (box) => {
+    this.setState({box: box});
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Particles
+          className='Particles'
+          params={particlesParams}
+        />
+        <Navigation />
+        <Header box={this.state.box} imageUrl={this.state.imageUrl} onButtonDetect={this.onButtonDetect} onURLChange={this.onURLChange} />
+      </div>
+    )
+
+  }
 }
 
 export default App;

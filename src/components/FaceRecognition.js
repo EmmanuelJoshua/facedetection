@@ -1,15 +1,19 @@
 import React from 'react'
 import { Container, Image } from 'react-bootstrap'
 
-const FaceRecognition = () => {
+const FaceRecognition = ({box ,imageUrl}) => {
     return (
-        <div className='FaceRecognition'>
+        <div className='d-flex justify-content-center  '>
+              <div className='FaceRecognition '>
             <Container fluid='true'>
                 <Image fluid
                     className='Image'
-                    src={'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'}
+                    id='InputImage'
+                    src={imageUrl}
                 />
+                <div className='BoundingBox' style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
             </Container>
+        </div>
         </div>
 
     );
