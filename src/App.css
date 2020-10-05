@@ -134,3 +134,8 @@
   color: #033152 !important;
 }
 
+@media screen and (max-width: 800px) {
+  .App {
+    height: 100%;
+  } 
+}
