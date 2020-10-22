@@ -19,8 +19,14 @@ class App extends Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: {}
+      box: {},
+      route: 'signin',
+      isSignedIn: false
     }
+  }
+
+  onRouteChange = (route) =>{
+    this.setState({route: route});
   }
 
   onURLChange = (event) => {
@@ -59,8 +65,8 @@ class App extends Component {
           className='Particles'
           params={particlesParams}
         />
-        <Navigation />
-        <Header box={this.state.box} imageUrl={this.state.imageUrl} onButtonDetect={this.onButtonDetect} onURLChange={this.onURLChange} />
+        <Navigation route={this.state.route} onRouteChange={this.onRouteChange} />
+        <Header onRouteChange={this.onRouteChange} route={this.state.route} box={this.state.box} imageUrl={this.state.imageUrl} onButtonDetect={this.onButtonDetect} onURLChange={this.onURLChange} />
       </div>
     )
 

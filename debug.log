@@ -39,3 +39,13 @@
 [1002/184157.863:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [1002/185157.871:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [1002/185157.872:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1017/130933.026:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1017/131933.011:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1017/131933.012:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1017/132433.621:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1017/133933.627:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1021/224631.610:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1021/225631.624:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1021/225631.625:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\DeLL\AppData\Local\Google\Chrome\User Data\Crashpad\reports\8f84be2b-6c73-4c41-86a0-6cd8c442352d.dmp: The system cannot find the file specified. (0x2)
+[1021/225631.625:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1022/011641.669:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

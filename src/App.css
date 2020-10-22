@@ -63,7 +63,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.SectionOne{
+.MainHeader .SectionOne{
   background-color: #24292E;
   border-radius: 10px 10px 0 0;
   height: 70px;
@@ -71,12 +71,12 @@
   color: #F0EFE9;
 }
 
-.SectionOne p{
+.MainHeader .SectionOne p{
   font-size: 20px;
   font-family: 'Trebuchet MS';
 }
 
-.SectionOne .Rank{
+.MainHeader .SectionOne .Rank{
   color: #033152;
   margin-left: 7px;
   width: 30px;
@@ -85,7 +85,7 @@
   background-color: whitesmoke;
 }
 
-.FaceRecognition{
+.MainHeader .FaceRecognition{
   margin-left: auto;
   margin-right: auto;
   position: absolute;
@@ -93,11 +93,11 @@
   padding: 10px;
 }
 
-.FaceRecognition .Image{
+.MainHeader .FaceRecognition .Image{
   height: 240px !important;
 }
 
-.FaceRecognition .BoundingBox {
+.MainHeader .FaceRecognition .BoundingBox {
   position: absolute;
   box-shadow: 0 0 0 3px #149df2 inset;
   display: flex;
@@ -106,7 +106,7 @@
   cursor: pointer;
 }
 
-.SectionTwo{
+.MainHeader .SectionTwo{
   position: absolute;
   bottom: 0;
   background-color: #24292E;
@@ -116,20 +116,146 @@
   color: #F0EFE9;
 }
 
-.SectionTwo .UrlText{
+.MainHeader .SectionTwo .UrlText{
   font-size: 16px !important;
   font-family: 'Trebuchet MS';
   border-color: white !important;
 }
 
-.SectionTwo .Detect{
+.MainHeader .SectionTwo .Detect{
   color: white;
   border: 1px solid white !important;
   font-size: 16px !important;
   font-family: 'Trebuchet MS';
 }
 
-.SectionTwo .Detect:hover{
+.MainHeader .SectionTwo .Detect:hover{
+  background-color: #EEEEEE !important;
+  color: #033152 !important;
+}
+
+.Register{
+  height: 410px;
+  background-color: #EEEEEE;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Register .SectionOne{
+  background-color: #24292E;
+  border-radius: 10px 10px 0 0;
+  height: 70px;
+  width: 100%;
+  color: #F0EFE9;
+}
+
+.Register .SectionOne p{
+  font-size: 20px;
+  font-family: 'Trebuchet MS';
+}
+
+.Register .SectionOne div{
+  width: 20px;
+  height: 6px;
+  background-color: #E28176;
+}
+
+.Register .SectionTwo{
+  padding-top: 10px;
+}
+
+.Register .SectionTwo .FormLabel{
+  color: #033152;
+  font-size: 16px;
+  font-family: 'Trebuchet MS';
+}
+
+.Register .SectionTwo .UrlText{
+  font-family: 'Trebuchet MS';
+  color: #5F6C7C;
+}
+
+.Register .SectionThree{
+  position: absolute;
+  bottom: 0;
+  background-color: #24292E;
+  border-radius: 0 0 10px 10px;
+  height: 70px;
+  width: 100%;
+  color: #F0EFE9;
+}
+
+.Register .SectionThree .RegisterBtn{
+  color: white;
+  border: 1.5px solid white !important;
+  font-size: 16px !important;
+  font-family: 'Trebuchet MS';
+}
+
+.Register .SectionThree .RegisterBtn:hover{
+  background-color: #EEEEEE !important;
+  color: #033152 !important;
+}
+
+.Login{
+  height: 380px;
+  background-color: #EEEEEE;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Login .SectionOne{
+  background-color: #24292E;
+  border-radius: 10px 10px 0 0;
+  height: 70px;
+  width: 100%;
+  color: #F0EFE9;
+}
+
+.Login .SectionOne p{
+  font-size: 20px;
+  font-family: 'Trebuchet MS';
+}
+
+.Login .SectionOne div{
+  width: 20px;
+  height: 6px;
+  background-color: #E28176;
+}
+
+.Login .SectionTwo{
+  padding-top: 10px;
+}
+
+.Login .SectionTwo .FormLabel{
+  color: #033152;
+  font-size: 16px;
+  font-family: 'Trebuchet MS';
+}
+
+.Login .SectionTwo .UrlText{
+  font-family: 'Trebuchet MS';
+  color: #5F6C7C;
+}
+
+.Login .SectionThree{
+  position: absolute;
+  bottom: 0;
+  background-color: #24292E;
+  border-radius: 0 0 10px 10px;
+  height: 70px;
+  width: 100%;
+  color: #F0EFE9;
+}
+
+.Login .SectionThree .RegisterBtn{
+  color: white;
+  border: 1.5px solid white !important;
+  font-size: 16px !important;
+  font-family: 'Trebuchet MS';
+}
+
+.Login .SectionThree .RegisterBtn:hover{
   background-color: #EEEEEE !important;
   color: #033152 !important;
 }
